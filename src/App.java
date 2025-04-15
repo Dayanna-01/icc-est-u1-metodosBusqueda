@@ -12,7 +12,8 @@ public class App {
         personas[4] = new Persona(105, "Lucía");
         personas[5] = new Persona(106, "Carlos");
         personas[6] = new Persona(107, "Sofía");
+
         MetodosBusqueda mB = new MetodosBusqueda(personas);
-        
+        mB.showPersonByCode();
     }
 }

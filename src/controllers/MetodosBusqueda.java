@@ -1,6 +1,8 @@
 package controllers;
+
 import views.ShowConsole;
-import models.Persona; 
+import models.Persona;
+
 public class MetodosBusqueda {
 
     private ShowConsole showConsole;
@@ -20,29 +22,24 @@ public class MetodosBusqueda {
         return -1;
     }
 
-    /**
-     * 
-     * return en la posicion
-     */
     public int findPersonaByCode(int code) {
         for (int i = 0; i < people.length; i++) {
-            if (people[i].getCode() == code) {
+            if (people[i] != null && people[i].getCode() == code) {
                 return i;
             }
         }
         return -1;
     }
 
-    public void showPersonByCode(){
-        int codeToFind = showConsole.getCode();
+    public void showPersonByCode() {
+        int codeToFind = showConsole.getCode();  // Asegurate de que este método exista
         int indexPerson = findPersonaByCode(codeToFind);
         
-        if(indexPerson >=0){
-            showConsole.showMessage("Persona encontrada");
+        if (indexPerson >= 0) {
+            showConsole.showMessage("Persona encontrada:");
             showConsole.showMessage(people[indexPerson].toString());
-        }else{
-            showConsole.showMessage("Persona con codigo: "+codeToFind);
+        } else {
+            showConsole.showMessage("Persona con código " + codeToFind + " no encontrada.");
         }
     }
-    
 }
