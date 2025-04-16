@@ -37,7 +37,9 @@ public class MetodosBusqueda {
         
         if (indexPerson >= 0) {
             showConsole.showMessage("Persona encontrada:");
-            showConsole.showMessage(people[indexPerson].toString());
+            Persona persona = people[indexPerson];
+            showConsole.showMessage("Código: " + persona.getCode());
+            showConsole.showMessage("Nombre: " + persona.getName());
         } else {
             showConsole.showMessage("Persona con código " + codeToFind + " no encontrada.");
         }
